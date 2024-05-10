@@ -18,7 +18,7 @@ func init() {
 
 //OleInit initializes OLE.
 func OleInit() {
-	ole.CoInitializeEx(0, 0)
+	ole.CoInitializeEx(0, ole.COINIT_APARTMENTTHREADED|ole.COINIT_DISABLE_OLE1DDE)
 }
 
 //OleRelease realeses OLE resources in opcAutomation.
