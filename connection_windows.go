@@ -264,6 +264,10 @@ func (ai *AutomationItems) addSingle(tag string) error {
 	if err != nil {
 		return errors.New(tag + ":" + err.Error())
 	}
+	//如果tag不存在server中，防止空指针报错移除监听组
+	if item.ToIDispatch() != nil {
+		ai.items[tag] = item.ToIDispatch()
+	}
 	ai.items[tag] = item.ToIDispatch()
 	return nil
 }
