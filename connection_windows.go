@@ -268,7 +268,6 @@ func (ai *AutomationItems) addSingle(tag string) error {
 	if item.ToIDispatch() != nil {
 		ai.items[tag] = item.ToIDispatch()
 	}
-	ai.items[tag] = item.ToIDispatch()
 	return nil
 }
 
